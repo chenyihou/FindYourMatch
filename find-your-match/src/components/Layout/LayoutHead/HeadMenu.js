@@ -1,7 +1,8 @@
 import { Menu, Icon } from "antd";
 import React from "react";
-const { SubMenu } = Menu;
+import "./HeadMenu.css";
 
+const { SubMenu } = Menu;
 export class HeadMenu extends React.Component {
   state = {
     current: "mail"
@@ -20,6 +21,7 @@ export class HeadMenu extends React.Component {
         onClick={this.handleClick}
         selectedKeys={[this.state.current]}
         mode="horizontal"
+        id="menu"
       >
         <Menu.Item key="mail">
           <Icon type="mail" />
@@ -33,7 +35,7 @@ export class HeadMenu extends React.Component {
           title={
             <span className="submenu-title-wrapper">
               <Icon type="setting" />
-              Navigation Three - Submenu
+              history
             </span>
           }
         >
