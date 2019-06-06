@@ -1,3 +1,21 @@
-#layout-header-container {
-  background-color: yellowgreen;
+#head-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#head-right {
+  display: flex;
+  flex-direction: row;
+}
+
+#menu {
+  background-color: #ffffff00;
+}
+
+#head-background {
+  position: absolute;
+  height: 50vh;
+  width: 100%;
+  background-color: bisque;
 }

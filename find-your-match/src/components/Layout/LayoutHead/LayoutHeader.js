@@ -1,49 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Button } from "antd";
-import { HeadMenu } from "./HeadMenu";
 import "./LayoutHeader.css";
-import { showLoginModal } from "../../Modal/LoginModal";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { logout } from "../../../redux/actions/loginAction";
-function _LayoutHeader(props) {
-  useEffect(() => {
-    console.log(props);
-  });
-  return (
-    <header id="layout-header-container">
-      <Row type="flex" justify="space-around" align="middle">
-        <Col>Find Your Match</Col>
-      </Row>
-      <Row>
-        <Col span={12} offset={6}>
-          <HeadMenu />
-        </Col>
-        <Col span={2}>search bar</Col>
-        {props.isLogin ? (
-          <>
-            <Col span={2}>
-              <Button ghost onClick={props.logout}>
-                log out
-              </Button>
-            </Col>
+import { HeadBar } from "./HeadBar";
 
-            {props.username}
-          </>
-        ) : (
-          <>
-            <Col span={2}>
-              <Button ghost onClick={showLoginModal}>
-                log in
-              </Button>
-            </Col>
-            <Col span={2}>
-              <Button ghost>register</Button>
-            </Col>
-          </>
-        )}
-      </Row>
-    </header>
+function _LayoutHeader({ username, isLogin, location }) {
+  return (
+    <>
+      <HeadBar username={username} isLogin={isLogin} />
+    </>
   );
 }
 

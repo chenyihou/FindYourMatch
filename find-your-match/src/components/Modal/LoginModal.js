@@ -46,17 +46,15 @@ class _LoginModal extends React.Component {
   render() {
     const { visible, confirmLoading, ModalText } = this.state;
     return (
-      <div>
-        <Modal
-          title="Title"
-          visible={visible}
-          onOk={this.handleOk}
-          confirmLoading={confirmLoading}
-          onCancel={this.handleCancel}
-        >
-          <p>{ModalText}</p>
-        </Modal>
-      </div>
+      <Modal
+        title="Title"
+        visible={visible}
+        onOk={this.handleOk}
+        confirmLoading={confirmLoading}
+        onCancel={this.handleCancel}
+      >
+        <p>{ModalText}</p>
+      </Modal>
     );
   }
 }
