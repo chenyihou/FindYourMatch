@@ -3,7 +3,7 @@ import { Row, Col, Button } from "antd";
 import { HeadMenu } from "./HeadMenu";
 import "./LayoutHeader.css";
 import { showLoginModal } from "../../Modal/LoginModal";
-
+import { showRegisterModal } from "../../Modal/RegisterModal";
 export function HeadBar(props) {
   return (
     <header id="head-bar">
@@ -30,7 +30,9 @@ export function HeadBar(props) {
               </Button>
             </div>
             <div>
-              <Button ghost>register</Button>
+              <Button ghost onClick={showRegisterModal}>
+                register
+              </Button>
             </div>
           </>
         )}

@@ -4,13 +4,11 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { login } from "../../redux/actions/loginAction";
 import firebase from "firebase";
-export let showLoginModal = () => {};
-
-var provider = new firebase.auth.GoogleAuthProvider();
-class _LoginModal extends React.Component {
+export let showRegisterModal = () => {};
+class _RegisterModal extends React.Component {
   constructor(props) {
     super(props);
-    showLoginModal = () => {
+    showRegisterModal = () => {
       this.setState({
         visible: true
       });
@@ -28,40 +26,29 @@ class _LoginModal extends React.Component {
     //   confirmLoading: true
     // });
     // this.props.login();
-    // let email = "hcy1391697848@gmail.com";
-    // let password = "zxczxc";
-    // firebase
-    //   .auth()
-    //   .createUserWithEmailAndPassword(email, password)
-    //   .catch(function(error) {
-    //     // Handle Errors here.
-    //     var errorCode = error.code;
-    //     var errorMessage = error.message;
-    //     console.log(errorCode, errorMessage);
-    //     // ...
-    //   });
+    let email = "hcy1391697848@gmail.com";
+    let password = "zxczxc";
     firebase
       .auth()
-      .signInWithPopup(provider)
-      .then(function(result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        console.log(result);
-        // ...
-      })
+      .signInWithEmailAndPassword(email, password)
       .catch(function(error) {
-        console.log(error);
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
+        console.log(error);
         // ...
       });
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        console.log(user);
+
+        // ...
+      } else {
+        // User is signed out.
+        // ...
+      }
+    });
   };
 
   static getDerivedStateFromProps = (nextProps, prevState) => {
@@ -104,4 +91,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({ login }, dispatch);
 export const LoginModal = connect(
   mapStateToProps,
   mapDispatchToProps
-)(_LoginModal);
+)(_RegisterModal);

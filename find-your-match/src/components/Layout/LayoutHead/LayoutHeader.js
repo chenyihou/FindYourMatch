@@ -6,11 +6,7 @@ import { logout } from "../../../redux/actions/loginAction";
 import { HeadBar } from "./HeadBar";
 
 function _LayoutHeader({ username, isLogin, location }) {
-  return (
-    <>
-      <HeadBar username={username} isLogin={isLogin} />
-    </>
-  );
+  return <HeadBar username={username} isLogin={isLogin} />;
 }
 
 const mapStateToProps = state => ({
