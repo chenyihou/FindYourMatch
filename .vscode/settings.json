@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "prettier.arrowParens": "always",
+    "prettier.eslintIntegration": true,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.tslintIntegration": true,
+    "eslint.autoFixOnSave": true,
+}

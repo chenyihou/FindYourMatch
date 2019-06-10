@@ -1,8 +1,13 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
-export function _HeadBackground(props) {
-  console.log(props.location, props.location.pathname === "/");
-  return props.location.pathname === "/" && <div id="head-background"> </div>;
-}
+import { Button } from "antd";
 
-export let HeadBackground = withRouter(_HeadBackground);
+export function HeadBackground(props) {
+    return (
+        <div id="background-container">
+            <div id="head-background">
+                <Button onClick={(e) => console.log("hhi")}>match now </Button>
+                <Button> tradition</Button>{" "}
+            </div>
+        </div>
+    );
+}

@@ -19,6 +19,13 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+var hello = firebase.functions().httpsCallable('hello');
+hello({text: 'hi'}).then(function(result) {
+  // Read result of the Cloud Function.
+  console.log(result)
+  // ...
+});
 ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change

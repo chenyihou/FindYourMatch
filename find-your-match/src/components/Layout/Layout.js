@@ -33,8 +33,6 @@ export function _MyLayout({ location }) {
     const background = document.querySelector("#head-background");
     let h = background ? background.clientHeight : header.clientHeight;
     document.querySelector("main").style.marginTop = h + "px";
-    console.log(document.querySelector("main"));
-    // console.log(dom);
   });
   return (
     <div id="container">
