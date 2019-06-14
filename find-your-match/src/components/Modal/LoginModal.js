@@ -1,8 +1,17 @@
-import { Modal, Button } from "antd";
+import {
+  Modal,
+  Button
+} from "antd";
 import React from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { login } from "../../redux/actions/loginAction";
+import {
+  connect
+} from "react-redux";
+import {
+  bindActionCreators
+} from "redux";
+import {
+  login
+} from "../../redux/actions/loginAction";
 import firebase from "firebase";
 export let showLoginModal = () => {};
 
@@ -43,7 +52,7 @@ class _LoginModal extends React.Component {
     firebase
       .auth()
       .signInWithPopup(provider)
-      .then(function(result) {
+      .then(function (result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
         // The signed-in user info.
@@ -51,7 +60,7 @@ class _LoginModal extends React.Component {
         console.log(result);
         // ...
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
         // Handle Errors here.
         var errorCode = error.code;
@@ -81,17 +90,30 @@ class _LoginModal extends React.Component {
     });
   };
   render() {
-    const { visible, confirmLoading, ModalText } = this.state;
-    return (
-      <Modal
-        title="Title"
-        visible={visible}
-        onOk={this.handleOk}
-        confirmLoading={confirmLoading}
-        onCancel={this.handleCancel}
-      >
-        <p>{ModalText}</p>
-      </Modal>
+    const {
+      visible,
+      confirmLoading,
+      ModalText
+    } = this.state;
+    return ( <
+      Modal title = "Title"
+      visible = {
+        visible
+      }
+      onOk = {
+        this.handleOk
+      }
+      confirmLoading = {
+        confirmLoading
+      }
+      onCancel = {
+        this.handleCancel
+      } >
+      <
+      p > {
+        ModalText
+      } < /p> <
+      /Modal>
     );
   }
 }
@@ -100,7 +122,9 @@ const mapStateToProps = state => ({
   isLogin: state.profile.isLogin
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({ login }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  login
+}, dispatch);
 export const LoginModal = connect(
   mapStateToProps,
   mapDispatchToProps

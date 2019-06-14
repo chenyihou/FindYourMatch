@@ -10,13 +10,17 @@ const functions = require("firebase-functions");
 
 // The Firebase Admin SDK to access the Firebase Realtime Database.
 const admin = require("firebase-admin");
-admin.initializeApp();
+admin.initializeApp({
+  credential: admin.credential.applicationDefault()
+});
+
+var db = admin.firestore();
 
 // Take the text parameter passed to this HTTP endpoint and insert it into the
 // Realtime Database under the path /messages/:pushId/original
-exports.hello = functions.https.onCall((data,context)=>{
+exports.hello = functions.https.onCall((data, context) => {
   console.log('helloworld')
   return {
-    text:'hello world'
+    text: 'hello world'
   }
 })

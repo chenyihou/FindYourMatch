@@ -1,28 +1,28 @@
 #head-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #head-right {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 #menu {
-  background-color: #ffffff00;
+    background-color: #ffffff00;
 }
 
 #head-background {
-  height: 50vh;
-  width: 100%;
-  background-color: bisque;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url("http://www.artwallpaper.eu/wallpaper/wp-content/uploads/2012/12/06/714/Vincent-Van-Gogh-Starry-Night-Over-The-Rhone-1889-Paris-Wallpaper.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #background-container {
-  position: relative;
-
+    position: relative;
 }
